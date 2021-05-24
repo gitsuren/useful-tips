@@ -7,7 +7,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-class VersionControllerTest {
+class VersionControllerStandaloneTest {
 
     private MockMvc mockMvc;
     private static final String CONTENT_TYPE = "application/json";
@@ -23,7 +23,6 @@ class VersionControllerTest {
                 .perform(MockMvcRequestBuilders.get("/version"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(mvcResult -> mvcResult.getResponse().getContentAsString().equals("1.0"));
-//                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(articleId));
     }
 
 
